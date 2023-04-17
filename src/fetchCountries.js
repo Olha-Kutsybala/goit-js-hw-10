@@ -8,7 +8,7 @@ export function fetchCountries(name) {
   ).then(response => {
     if (!response.ok) {
       throw new Error(
-        Notiflix.Notify.failure('Вибачте, збігів немає! Спробуйте ще раз!')
+        Notiflix.Notify.failure('"Oops, there is no country with that name"')
       );
     }
     return response.json();

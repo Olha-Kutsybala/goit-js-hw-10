@@ -47,11 +47,13 @@ function chooseCountry(countries) {
 function givingInfoAboutOneCountry(countries) {
   const markup = countries
     .map(country => {
-      return `<div class="position"><img src="${country.flags.svg}" width="100" height="60" alt="flag">
+      return `<div class="position"><img src="${
+        country.flags.svg
+      }" width="100" height="60" alt="flag">
             <h2 class="title">${country.name.official}</h2>
             <p><b>Capital</b>: ${country.capital}</p>
             <p><b>Population</b>: ${country.population}</p>
-            <p><b>Languages</b>: ${country.languages}</p></div>`;
+            <p><b>Languages</b>: ${Object.values(country.languages)}</p></div>`;
     })
     .join('');
   refs.infoOfCoutrry.innerHTML = markup;
